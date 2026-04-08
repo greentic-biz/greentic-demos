@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import greenticLogo from "@/assets/greentic-logo.png";
 
 interface NavbarProps {
   onGetAccess: () => void;
