@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Headphones, FileCheck, ServerCog, Globe, LayoutGrid, MessageSquare } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WaitingListPopup from "@/components/WaitingListPopup";
+import WebchatPopup from "@/components/WebchatPopup";
 import { useState, useEffect } from "react";
 
 interface DemoDetail {
@@ -95,9 +95,10 @@ const demoData: Record<string, DemoDetail> = {
 };
 
 const DemoDetailPage = () => {
-  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [popupOpen, setPopupOpen] = useState(false);
+  const { id } = useParams<{ id: string }>();
+  const [waitingListOpen, setWaitingListOpen] = useState(false);
+  const [solutionOpen, setSolutionOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -115,8 +116,9 @@ const DemoDetailPage = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar onGetAccess={() => setPopupOpen(true)} />
-      <WaitingListPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
+      <Navbar onGetAccess={() => setWaitingListOpen(true)} />
+      <WebchatPopup open={waitingListOpen} onClose={() => setWaitingListOpen(false)} url="https://waitinglist.greentic.ai" title="Get Early Access to Greentic" />
+      <WebchatPopup open={solutionOpen} onClose={() => setSolutionOpen(false)} url="https://welcome.greentic.ai" title="Get This Solution" />
 
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24">
@@ -246,12 +248,9 @@ const DemoDetailPage = () => {
             <p className="text-muted-foreground text-sm mb-8 max-w-md mx-auto">
               Get this solution running in your environment in minutes.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={() => setPopupOpen(true)} className="btn-primary-glow text-sm flex items-center gap-2 justify-center">
+            <div className="flex justify-center">
+              <button onClick={() => setSolutionOpen(true)} className="btn-primary-glow text-sm flex items-center gap-2 justify-center">
                 Get this solution <ArrowRight size={16} />
-              </button>
-              <button onClick={() => setPopupOpen(true)} className="btn-outline-glow text-sm">
-                Talk to us
               </button>
             </div>
           </div>

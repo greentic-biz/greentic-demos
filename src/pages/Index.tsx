@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import DemoGrid from "@/components/DemoGrid";
-import WaitingListPopup from "@/components/WaitingListPopup";
+import WebchatPopup from "@/components/WebchatPopup";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,7 +14,12 @@ const Index = () => {
       <Hero onGetAccess={() => setPopupOpen(true)} />
       <DemoGrid onWaitingList={() => setPopupOpen(true)} />
       <Footer />
-      <WaitingListPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
+      <WebchatPopup
+        open={popupOpen}
+        onClose={() => setPopupOpen(false)}
+        url="https://waitinglist.greentic.ai"
+        title="Get Early Access to Greentic"
+      />
     </div>
   );
 };
