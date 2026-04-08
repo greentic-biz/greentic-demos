@@ -48,7 +48,7 @@ const demoData: Record<string, DemoDetail> = {
     focus: ["Governance", "Compliance", "Adaptive Cards approvals"],
   },
   "it-operations": {
-    title: "AI IT Operations Worker",
+    title: "AI IT/Network Assistant",
     tagline: "Query systems, diagnose issues, and automate operations through conversational workflows.",
     icon: <ServerCog size={32} />,
     whatItDoes:
