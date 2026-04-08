@@ -29,8 +29,11 @@ const Navbar = ({ onGetAccess }: NavbarProps) => {
           <a href="#demos" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
             Demos
           </a>
-          <a href="#architecture" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-            Architecture
+          <a href="https://docs.greentic.ai" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            Docs
+          </a>
+          <a href="https://github.com/greenticai" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            GitHub
           </a>
           <button onClick={onGetAccess} className="btn-primary-glow text-sm">
             Get Early Access
@@ -52,7 +55,8 @@ const Navbar = ({ onGetAccess }: NavbarProps) => {
           className="md:hidden border-t border-border/20 px-6 py-4 flex flex-col gap-4"
         >
           <a href="#demos" className="text-muted-foreground hover:text-foreground transition-colors text-sm" onClick={() => setMobileOpen(false)}>Demos</a>
-          <a href="#architecture" className="text-muted-foreground hover:text-foreground transition-colors text-sm" onClick={() => setMobileOpen(false)}>Architecture</a>
+          <a href="https://docs.greentic.ai" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm" onClick={() => setMobileOpen(false)}>Docs</a>
+          <a href="https://github.com/greenticai" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm" onClick={() => setMobileOpen(false)}>GitHub</a>
           <button onClick={() => { onGetAccess(); setMobileOpen(false); }} className="btn-primary-glow text-sm w-fit">Get Early Access</button>
         </motion.div>
       )}
