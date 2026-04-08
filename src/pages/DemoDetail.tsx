@@ -95,6 +95,7 @@ const demoData: Record<string, DemoDetail> = {
 };
 
 const DemoDetailPage = () => {
+  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [waitingListOpen, setWaitingListOpen] = useState(false);
   const [solutionOpen, setSolutionOpen] = useState(false);
