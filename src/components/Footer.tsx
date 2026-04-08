@@ -7,7 +7,6 @@ const Footer = () => (
         <img src={greenticLogo} alt="Greentic" className="h-6 w-6" />
         <span className="font-display font-semibold text-sm text-foreground">Greentic<span className="text-primary">.ai</span></span>
       </div>
-      </div>
       <p className="text-muted-foreground text-xs">
         Deterministic orchestration + optional LLM reasoning · Deployable as bundles
       </p>
