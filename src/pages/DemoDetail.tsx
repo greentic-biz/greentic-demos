@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Headphones, FileCheck, ServerCog, Globe, LayoutGrid } from "lucide-react";
+import { ArrowLeft, ArrowRight, Headphones, FileCheck, ServerCog, Globe, LayoutGrid, MessageSquare } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WaitingListPopup from "@/components/WaitingListPopup";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface DemoDetail {
   title: string;
@@ -98,6 +98,10 @@ const DemoDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [popupOpen, setPopupOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const demo = id ? demoData[id] : null;
 
