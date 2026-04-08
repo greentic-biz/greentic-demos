@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Headphones, FileCheck, ServerCog, Globe, LayoutGrid } from "lucide-react";
+import { ArrowLeft, ArrowRight, Headphones, FileCheck, ServerCog, Globe, LayoutGrid, MessageSquare } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WaitingListPopup from "@/components/WaitingListPopup";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface DemoDetail {
   title: string;
@@ -99,6 +99,10 @@ const DemoDetailPage = () => {
   const navigate = useNavigate();
   const [popupOpen, setPopupOpen] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   const demo = id ? demoData[id] : null;
 
   if (!demo) {
@@ -134,7 +138,47 @@ const DemoDetailPage = () => {
         </div>
       </section>
 
-      {/* What it does */}
+      {/* Live Demo Embed */}
+      <section className="pb-16">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card overflow-hidden"
+          >
+            <div className="p-6 border-b border-border/30 flex items-center gap-3">
+              <MessageSquare size={20} className="text-primary" />
+              <h2 className="font-display font-bold text-lg text-foreground">Try it live</h2>
+              <span className="text-xs text-muted-foreground ml-auto">Powered by Greentic Webchat</span>
+            </div>
+            {/* 
+              Embed your Microsoft Bot Framework webchat here.
+              Replace the placeholder below with your <iframe> or DirectLine webchat script.
+              Example: <iframe src="https://your-bot-url/webchat" ... />
+            */}
+            <div
+              id={`webchat-${id}`}
+              className="w-full bg-muted/30 flex items-center justify-center"
+              style={{ minHeight: "500px" }}
+            >
+              <div className="text-center px-6 py-16">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <MessageSquare size={28} className="text-primary" />
+                </div>
+                <p className="text-muted-foreground text-sm font-medium mb-1">
+                  Live demo embed area
+                </p>
+                <p className="text-muted-foreground/60 text-xs max-w-sm mx-auto">
+                  Insert your Greentic webchat (Microsoft Bot Framework DirectLine) here
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+
       <section className="pb-16">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass-card p-8 md:p-10">
