@@ -18,7 +18,7 @@ const Navbar = ({ onGetAccess }: NavbarProps) => {
       className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/20 backdrop-blur-2xl"
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <a href="/" className="flex items-center gap-2">
+        <a href="https://greentic.ai" className="flex items-center gap-2">
           <img src={greenticLogo} alt="Greentic" className="h-8 w-8" />
           <span className="font-display font-bold text-xl text-foreground">
             Greentic<span className="text-primary">.ai</span>
