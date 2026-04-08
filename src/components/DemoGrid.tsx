@@ -29,7 +29,7 @@ const demos: DemoCardData[] = [
   },
   {
     id: "it-operations",
-    title: "AI IT Operations Worker",
+    title: "AI IT/Network Assistant",
     description:
       "Query systems, diagnose issues, and automate operations through conversational workflows.",
     icon: <ServerCog size={24} />,
