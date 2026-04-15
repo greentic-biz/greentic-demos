@@ -3,8 +3,16 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
+const normalizeBasePath = (value?: string) => {
+  if (!value || value === "/") {
+    return "/";
+  }
+
+  return `/${value.replace(/^\/+|\/+$/g, "")}/`;
+};
+
 export default defineConfig(({ mode }) => ({
+  base: normalizeBasePath(process.env.VITE_BASE_PATH),
   server: {
     host: "::",
     port: 8080,
