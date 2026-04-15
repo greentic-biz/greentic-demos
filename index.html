@@ -3,25 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
     <title>Greentic Demos — Real Digital Workers</title>
-    <meta name="description" content="Explore autonomous digital workers solving real business problems. Customer service, finance, IT operations and more.">
+    <meta name="description" content="Explore autonomous digital workers solving real business problems. Customer service, finance, IT operations and more." />
     <meta name="author" content="Lovable" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    
-    
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83f10738-d445-4029-b9da-60b0d664182e/id-preview-cd8cc435--02fe02b5-258d-42b1-b8f8-207dc2f67ce7.lovable.app-1775666936252.png">
+    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83f10738-d445-4029-b9da-60b0d664182e/id-preview-cd8cc435--02fe02b5-258d-42b1-b8f8-207dc2f67ce7.lovable.app-1775666936252.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83f10738-d445-4029-b9da-60b0d664182e/id-preview-cd8cc435--02fe02b5-258d-42b1-b8f8-207dc2f67ce7.lovable.app-1775666936252.png">
-    <meta property="og:title" content="Greentic Demos — Real Digital Workers">
-  <meta name="twitter:title" content="Greentic Demos — Real Digital Workers">
-  <meta property="og:description" content="Explore autonomous digital workers solving real business problems. Customer service, finance, IT operations and more.">
-  <meta name="twitter:description" content="Explore autonomous digital workers solving real business problems. Customer service, finance, IT operations and more.">
-</head>
+    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83f10738-d445-4029-b9da-60b0d664182e/id-preview-cd8cc435--02fe02b5-258d-42b1-b8f8-207dc2f67ce7.lovable.app-1775666936252.png" />
+    <meta property="og:title" content="Greentic Demos — Real Digital Workers" />
+    <meta name="twitter:title" content="Greentic Demos — Real Digital Workers" />
+    <meta property="og:description" content="Explore autonomous digital workers solving real business problems. Customer service, finance, IT operations and more." />
+    <meta name="twitter:description" content="Explore autonomous digital workers solving real business problems. Customer service, finance, IT operations and more." />
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const redirectedPath = params.get("p");
+
+        if (!redirectedPath) {
+          return;
+        }
+
+        const redirectedQuery = params.get("q");
+        const redirectedHash = params.get("h");
+        const nextUrl =
+          redirectedPath +
+          (redirectedQuery ? "?" + redirectedQuery : "") +
+          (redirectedHash ? "#" + redirectedHash : "");
+
+        window.history.replaceState(null, "", nextUrl);
+      })();
+    </script>
+  </head>
 
   <body>
     <div id="root"></div>
